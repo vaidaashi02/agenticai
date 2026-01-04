@@ -6,6 +6,12 @@ chroma_client = chromadb.Client()
 
 # Create a collection
 collection = chroma_client.create_collection(name="my_collection")
+# We can also add a specific distance metric to be used
+# collection = chroma_client.create_collection(
+#     name="my_collection", 
+#     distance_metric="cosine") # default
+# Other options for distance: l2 (euclidean distance)
+# and ip (inner product)
 
 # Add some text to the collection
 # Chroma will embed the text on its own using its own model
